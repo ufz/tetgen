@@ -161,7 +161,7 @@ public:
 
 
   // Additional parameters associated with an input (or mesh) vertex.
-  //   These informations are provided by CAD libraries. 
+  //   This information is provided by CAD libraries. 
   typedef struct {
     REAL uv[2];
     int tag;
@@ -209,7 +209,7 @@ public:
   //   tetrahedron's first corner is at index [0], followed by its other 
   //   corners, followed by six nodes on the edges of the tetrahedron if the
   //   second order option (-o2) is applied. Each tetrahedron occupies
-  //   'numberofcorners' ints.  The second order nodes are ouput only. 
+  //   'numberofcorners' ints.  The second order nodes are output only. 
   // 'tetrahedronattributelist':  An array of tetrahedron attributes.  Each
   //   tetrahedron's attributes occupy 'numberoftetrahedronattributes' REALs.
   // 'tetrahedronvolumelist':  An array of constraints, i.e. tetrahedron's
@@ -883,7 +883,7 @@ public:
   //   - an integer for boundary marker (point index);
   //   - an integer for point type (and flags).
   //   - an integer for geometry tag (optional, for -s switch).
-  // The structure of a point is an array of REALs.  Its acutal size is 
+  // The structure of a point is an array of REALs.  Its actual size is 
   //   determined at the runtime.
 
   typedef REAL *point;
@@ -1536,7 +1536,7 @@ public:
 
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                           //
-//  Memory managment                                                         //
+//  Memory management                                                        //
 //                                                                           //
 ///////////////////////////////////////////////////////////////////////////////
 

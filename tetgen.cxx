@@ -1397,7 +1397,7 @@ bool tetgenio::load_off(char* filebasename)
 // load_ply()    Load a polyhedron from a .ply file.                         //
 //                                                                           //
 // This is a simplified version of reading .ply files, which only reads the  //
-// set of vertices and the set of faces. Other informations (such as color,  //
+// set of vertices and the set of faces. Other information (such as color,   //
 // material, texture, etc) in .ply file are ignored. Complete routines for   //
 // reading and writing ,ply files are available from: http://www.cc.gatech.  //
 // edu/projects/large_models/ply.html.  Except the header section, ply file  //
@@ -1833,7 +1833,7 @@ bool tetgenio::load_medit(char* filebasename, int istetmesh)
           numberofpoints = nverts;
           pointlist = new REAL[nverts * 3];
         }
-        // Read the follwoing node list.
+        // Read the following node list.
         for (i = 0; i < nverts; i++) {
           bufferp = readline(buffer, fp, &line_count);
           if (bufferp == NULL) {
@@ -8276,7 +8276,7 @@ int tetgenmesh::flipnm(triface* abtets, int n, int level, int abedgepivot,
           // The last entry 'abtets[n-1]' is empty. It is used in two ways:
           //   (i) it remembers the vertex 'c' (in 'abtets[n-1].tet'), and
           //  (ii) it remembers the position [i] where this flip took place.
-          // These informations let us to either undo this flip or recover
+          // This information lets us to either undo this flip or recover
           //   the original edge link (for collecting new created tets).
           //abtets[n - 1] = fliptets[1]; // [e,d,b,c] is remembered.
           abtets[n - 1].tet = (tetrahedron *) pc;
@@ -9679,7 +9679,7 @@ int tetgenmesh::insertpoint(point insertpt, triface *searchtet, face *splitsh,
               checksh = * (face *) fastlookup(caveshlist, j);
               *parysh = checksh;
               cutshcount++;
-              caveshlist->objects--; // The list is shrinked.
+              caveshlist->objects--; // The list is shrunk.
               i--;
             }
           }
@@ -10664,7 +10664,7 @@ int tetgenmesh::hilbert_split(point* vertexarray,int arraysize,int gc0,int gc1,
   //   correspoding to x-, or y- or z-axis.
   axis = (gc0 ^ gc1) >> 1; 
 
-  // Calulate the split position along the axis.
+  // Calculate the split position along the axis.
   if (axis == 0) {
     split = 0.5 * (bxmin + bxmax);
   } else if (axis == 1) {
@@ -11890,7 +11890,7 @@ void tetgenmesh::flip22(face* flipfaces, int flipflag, int chkencflag)
 // replaces them by one face [a,b,c], it is returned in flipfaces[3].        //
 //                                                                           //
 // NOTE: The three old subfaces are not deleted within this routine.  They   //
-// still hold pointers to their adjacent subfaces. These informations are    //
+// still hold pointers to their adjacent subfaces. This information is       //
 // needed by the routine 'sremovevertex()' for recovering a segment.         //
 // The caller of this routine must delete the old subfaces after their uses. //
 //                                                                           //
@@ -12432,7 +12432,7 @@ int tetgenmesh::sinsertvertex(point insertpt, face *searchsh, face *splitseg,
           // Connect adjacent faces at two other edges of cavesh and neighsh.
           //   As a result, the two degenerated new faces are squeezed from the
           //   new triangulation of the cavity. Note that the squeezed faces
-          //   still hold the adjacent informations which will be used in 
+          //   still hold the adjacent information which will be used in 
           //   re-connecting subsegments (if they exist). 
           for (j = 0; j < 2; j++) { 
             senextself(cavesh);
@@ -15896,7 +15896,7 @@ void tetgenmesh::delaunizecavity(arraypool *cavpoints, arraypool *cavfaces,
   hullsize = 0l;
   checksubsegflag = 0;
   checksubfaceflag = 0;
-  b->verbose--;  // Suppress informations for creating Delaunay tetra.
+  b->verbose--;  // Suppress information for creating Delaunay tetra.
   b->plc = 0; // Do not check near vertices.
 
   ivf.bowywat = 1; // Use Bowyer-Watson algorithm.
@@ -25848,7 +25848,7 @@ void tetgenmesh::recoverdelaunay()
     tetloop.tet = tetrahedrontraverse();
   }
 
-  // Calulate a relatively lower bound for small improvement. 
+  // Calculate a relatively lower bound for small improvement. 
   //   Used to avoid rounding error in volume calculation.
   fc.bak_tetprism_vol = tetprism_vol_sum * b->epsilon * 1e-3;
 
@@ -26433,7 +26433,7 @@ long tetgenmesh::improvequalitybysmoothing(optparameters *opm)
                     opm->smthiter = 0; // reset
                     smoothpoint(ppt[i], cavetetlist, 1, opm);
                   }
-                  // This tet is modifed.
+                  // This tet is modified.
                   smtcount++;
                   if ((opm->imprval - 1.0) < cossmtdihed) {
                     // There are slivers in new tets. Queue them.
@@ -30839,7 +30839,7 @@ void tetrahedralize(tetgenbehavior *b, tetgenio *in, tetgenio *out,
                     tetgenio *addin, tetgenio *bgmin)
 {
   tetgenmesh m;
-  clock_t tv[12], ts[5]; // Timing informations (defined in time.h)
+  clock_t tv[12], ts[5]; // Timing information (defined in time.h)
   REAL cps = (REAL) CLOCKS_PER_SEC;
 
   tv[0] = clock();
