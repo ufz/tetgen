@@ -629,10 +629,6 @@ void exactinit(int verbose, int noexact, int nofilter, REAL maxx, REAL maxy,
   // Added by H. Si, 2012-08-23.
 
   // Sort maxx < maxy < maxz. Re-use 'half' for swapping.
-  assert(maxx > 0);
-  assert(maxy > 0);
-  assert(maxz > 0);
-
   if (maxx > maxz) {
     half = maxx; maxx = maxz; maxz = half;
   }
